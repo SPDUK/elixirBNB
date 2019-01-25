@@ -1,20 +1,18 @@
 # Elixirbnb
 
-To start your Phoenix server:
+**To install and run locally:**
 
-  * Install dependencies with `mix deps.get`
-  * Create and migrate your database with `mix ecto.setup`
-  * Install Node.js dependencies with `cd assets && npm install`
-  * Start Phoenix endpoint with `mix phx.server`
+`mix deps.get` to install
+`cd assets && npm install` to install front-end packages
 
-Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
+`mix ecto create` to create the database
+`mix ecto migrate` to add or update the tables
 
-Ready to run in production? Please [check our deployment guides](https://hexdocs.pm/phoenix/deployment.html).
+create a file called `.env` in the root directory of the project
+in that file add your sendgrid API key
 
-## Learn more
+```
+export SENDGRID_API_KEY="api key goes here"
+```
 
-  * Official website: http://www.phoenixframework.org/
-  * Guides: https://hexdocs.pm/phoenix/overview.html
-  * Docs: https://hexdocs.pm/phoenix
-  * Mailing list: http://groups.google.com/group/phoenix-talk
-  * Source: https://github.com/phoenixframework/phoenix
+`mix phx.server` to run the server.
