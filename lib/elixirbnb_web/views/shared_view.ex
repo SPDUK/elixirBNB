@@ -1,3 +1,3 @@
-defmodule ElixirbnbWeb.PageView do
+defmodule ElixirbnbWeb.SharedView do
   use ElixirbnbWeb.Coherence, :view
 end

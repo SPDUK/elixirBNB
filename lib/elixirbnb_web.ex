@@ -42,6 +42,10 @@ defmodule ElixirbnbWeb do
       import ElixirbnbWeb.ErrorHelpers
       import ElixirbnbWeb.Gettext
       alias ElixirbnbWeb.Router.Helpers, as: Routes
+
+      def render_shared(template, assigns \\ []) do
+        render(ElixirbnbWeb.SharedView, template, assigns)
+      end
     end
   end
 

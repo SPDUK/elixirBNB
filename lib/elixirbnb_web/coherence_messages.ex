@@ -73,7 +73,7 @@ defmodule ElixirbnbWeb.Coherence.Messages do
       )
 
   def registration_created_successfully,
-    do: dgettext(@domain, "Registration created successfully.")
+    do: dgettext(@domain, "Registration created successfully, Please log in.")
 
   def required, do: dgettext(@domain, "required")
   def resend_confirmation_email, do: dgettext(@domain, "Resend confirmation email")

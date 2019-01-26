@@ -14,15 +14,7 @@
     <link rel="stylesheet" href="<%= Routes.static_path(@conn, "/css/app.css") %>" />
   </head>
   <body>
-    <header>
-      <section class="container">
-        <nav role="navigation">
-          <ul>
-            <li><a href="https://hexdocs.pm/phoenix/overview.html">Get Started</a></li>
-          </ul>
-        </nav>
-      </section>
-    </header>
+    <%= render_shared "navbar.html", assigns %>
     <main role="main" class="container">
       <%= unless is_nil(get_flash(@conn, :info)) do %>
         <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
