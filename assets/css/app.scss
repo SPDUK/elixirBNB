@@ -5,13 +5,19 @@
 @import './button.scss';
 @import './variables.scss';
 @import './user_page.scss';
+@import './form.scss';
 body {
   color: #565a5c;
   background-color: #f8f8f8;
 }
 
 .container {
-  width: 80%;
+  @media screen and (min-width: 900px) {
+    width: 80%;
+  }
+}
+.form-container {
+  max-width: 500px;
 }
 
 .help-block {

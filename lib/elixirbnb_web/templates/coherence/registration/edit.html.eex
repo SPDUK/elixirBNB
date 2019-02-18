@@ -1,5 +1,26 @@
-<h3><%= dgettext "coherence", "Edit Account" %></h3>
+<div class="row">
+  <div class="col-md-3">
+    <ul class="sidebar-list">
+      <li class="sidebar-item">
+        <%= link("Edit Profile", to: Routes.registration_path(@conn, :edit), class: "sidebar-link active") %>
+      </li>
+      <br>
+      <%= link("View My Profile", to: Routes.registration_path(@conn, :show), class: "btn btn-white btn-block") %>
+    </ul>
+  </div>
+  <div class="col-md-9">
+    <div class="card">
+      <div class="card-header">Your Profile</div>
+      <div class="card-body">
+        <div class="container">
+          <%= render "form.html", changeset: @changeset,
+                                  label: dgettext("coherence", "Update"), required: [],
+                                  action: Routes.registration_path(@conn, :update) %>
+        </div>
+      </div>
+      </div>
+  </div>
+</div>
 
-<%= render "form.html", changeset: @changeset,
-                        label: dgettext("coherence", "Update"), required: [],
-                        action: Routes.registration_path(@conn, :update) %>
+
+

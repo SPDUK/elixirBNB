@@ -43,7 +43,9 @@ config :coherence,
     "name",
     "password",
     "current_password",
-    "password_confirmation"
+    "password_confirmation",
+    "phone_number",
+    "description"
   ],
   invitation_permitted_attributes: ["name", "email"],
   password_reset_permitted_attributes: [

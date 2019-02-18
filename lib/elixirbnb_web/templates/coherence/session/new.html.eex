@@ -1,5 +1,6 @@
 <br \>
-
+<div class="container form-container">
+<h3><%= dgettext "coherence", "Log In" %></h3>
 <%= form_for @conn, Routes.session_path(@conn, :create), [as: :session], fn f  -> %>
 
   <% login_field = Coherence.Config.login_field %>
@@ -33,3 +34,4 @@
   </div>
 
 <% end %>
+</div>

@@ -1,0 +1,36 @@
+@import './variables.scss';
+
+.form-group {
+  margin-bottom: 25px;
+}
+
+.form-control {
+  border-radius: 2px;
+  height: 3.5rem;
+}
+
+.sidebar-list {
+  padding-left: 0;
+  list-style: none;
+}
+.sidebar-item {
+  padding: 10px 0;
+  font-size: 16px;
+  color: #82888a !important;
+  border-bottom: 1px solid #ccc;
+}
+
+.sidebar-link {
+  color: #82888a;
+  text-decoration: none;
+  &:hover,
+  &:focus {
+    color: #cacccd;
+    text-decoration: none;
+  }
+}
+.active.sidebar-link {
+  color: #565a5c;
+  font-weight: bold;
+  text-decoration: none;
+}

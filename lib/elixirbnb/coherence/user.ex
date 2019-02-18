@@ -17,7 +17,7 @@ defmodule Elixirbnb.Coherence.User do
   @spec changeset(Ecto.Schema.t(), Map.t()) :: Ecto.Changeset.t()
   def changeset(model, params \\ %{}) do
     model
-    |> cast(params, ~w(name email)a ++ coherence_fields())
+    |> cast(params, ~w(name email phone_number description)a ++ coherence_fields())
     |> validate_required([:name, :email])
     |> validate_length(:name, min: 1, max: 100)
     |> validate_length(:email, min: 1, max: 200)
