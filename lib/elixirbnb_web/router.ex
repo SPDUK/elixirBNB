@@ -38,6 +38,8 @@ defmodule ElixirbnbWeb.Router do
   scope "/", ElixirbnbWeb do
     pipe_through :browser
 
+    get "/sign_in", PageController, :index
+
     get "/", PageController, :index
 
     scope "/user" do

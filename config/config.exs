@@ -52,32 +52,6 @@ config :coherence,
     "password_confirmation"
   ],
   session_permitted_attributes: ["remember", "email", "password"],
-  opts: [:authenticatable]
-
-# %% End Coherence Configuration %%
-# %% Coherence Configuration %%   Don't remove this line
-config :coherence,
-  user_schema: Elixirbnb.Coherence.User,
-  repo: Elixirbnb.Repo,
-  module: Elixirbnb,
-  web_module: ElixirbnbWeb,
-  router: ElixirbnbWeb.Router,
-  password_hashing_alg: Comeonin.Bcrypt,
-  messages_backend: ElixirbnbWeb.Coherence.Messages,
-  registration_permitted_attributes: [
-    "email",
-    "name",
-    "password",
-    "current_password",
-    "password_confirmation"
-  ],
-  invitation_permitted_attributes: ["name", "email"],
-  password_reset_permitted_attributes: [
-    "reset_password_token",
-    "password",
-    "password_confirmation"
-  ],
-  session_permitted_attributes: ["remember", "email", "password"],
   email_from_name: "Steve",
   email_from_email: "noreply@spdevuk.com",
   opts: [
@@ -93,5 +67,19 @@ config :coherence,
 config :coherence, ElixirbnbWeb.Coherence.Mailer,
   adapter: Swoosh.Adapters.Sendgrid,
   api_key: System.get_env("SENDGRID_API_KEY")
+
+config :coherence,
+  default_routes: %{
+    registrations_new: "/sign_up",
+    registrations: "/profile",
+    passwords: "/passwords",
+    confirmations: "/confirmations",
+    unlocks: "/unlocks",
+    invitations: "/invitations",
+    invitations_create: "/invitations/create",
+    invitations_resend: "/invitations/:id/resend",
+    sessions: "/sign_in",
+    registrations_edit: "/profile/edit"
+  }
 
 # %% End Coherence Configuration %%

@@ -16,16 +16,17 @@
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
             <a class="dropdown-item" href="#">Your Trips</a>
             <a class="dropdown-item" href="#">Wish Lists</a>
-            <%= link("Edit Profile", to: "/registrations/edit", class: "dropdown-item") %>
+            <%= link("Edit Profile", to: Routes.registration_path(@conn, :edit), class: "dropdown-item") %>
             <div class="dropdown-divider"></div>
-            <%= link("Log out", to: "/sessions", method: :delete, class: "dropdown-item") %>
+            <%= link("Log out", to: "/sign_in", method: :delete, class: "dropdown-item") %>
             <a class="dropdown-item" href="#">Account Settings</a>
           </div>
         </li>
       <% else %>
-        <li class="nav-item"><%= link("Sign Up", to: "/registrations/new", class: "btn") %></li>
-        <li class="nav-item"><%= link("Log In", to: "/sessions/new", class: "btn") %></li>
+        <li class="nav-item"><%= link("Sign Up", to: Routes.registration_path(@conn, :new), class: "btn") %></li>
+        <li class="nav-item"><%= link("Log In", to: Routes.session_path(@conn, :new), class: "btn") %></li>
       <% end %>
     </ul>
   </div>
 </nav>
+
