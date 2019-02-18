@@ -10,7 +10,7 @@
       <%= if current_user(@conn) do %>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <%= img_tag(avatar_url(@conn), class: "rounded-circle avatar-small") %>
+          <%= current_user(@conn) |> avatar_url() |> img_tag(class: "rounded-circle avatar-small")%>
           <%= current_user(@conn).name %>
           </a>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">

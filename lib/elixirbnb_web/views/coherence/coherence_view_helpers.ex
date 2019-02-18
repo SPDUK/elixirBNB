@@ -31,13 +31,13 @@ defmodule ElixirbnbWeb.Coherence.ViewHelpers do
   @signin_link_text "Sign In"
   @signout_link_text "Sign Out"
 
-  def avatar_url(conn) do
+  def avatar_url(user) do
     gravatar_id =
-      Coherence.current_user(conn).email
+      user.email
       |> :erlang.md5()
       |> Base.encode16(case: :lower)
 
-    "https://www.gravatar.com/avatar/#{gravatar_id}.jpg?d=identical&s=150"
+    "https://www.gravatar.com/avatar/#{gravatar_id}.jpg?&d=identicon&s=150"
   end
 
   @doc """
