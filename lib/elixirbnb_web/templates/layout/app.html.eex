@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Elixirbnb · Phoenix Framework</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.css" />
     <link
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
       rel="stylesheet"
@@ -17,10 +18,10 @@
     <%= render_shared "navbar.html", assigns %>
     <main role="main" class="container">
       <%= unless is_nil(get_flash(@conn, :info)) do %>
-        <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
+        <p class="alert alert-info animated bounceInDown" role="alert"><%= get_flash(@conn, :info) %></p>
       <% end %>
       <%= unless is_nil(get_flash(@conn, :error)) do %>
-        <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
+        <p class="alert alert-danger animated bounceInDown" role="alert"><%= get_flash(@conn, :error) %></p>
       <% end %>
       <%= render @view_module, @view_template, assigns %>
     </main>

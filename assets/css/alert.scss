@@ -1,0 +1,19 @@
+.alert {
+  opacity: 0.7;
+  width: 300px;
+  position: absolute;
+  right: 0px;
+  top: 65px;
+  left: 0px;
+  margin: 0 auto;
+  &:hover {
+    opacity: 1;
+  }
+  @media only screen and (min-width: 992px) {
+    right: 20px;
+    left: auto;
+    margin: 0px 0px;
+  }
+}
+
+// TODO: add a simple js thing to remove it from the DOM on click

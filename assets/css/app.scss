@@ -1,9 +1,13 @@
 /* This file is for your main application css. */
-
+@import './alert.scss';
 $bg: rgb(243, 243, 243);
 
 body {
   background-color: $bg;
+}
+
+.navbar {
+  margin-bottom: 90px;
 }
 
 .avatar {
@@ -20,4 +24,10 @@ body {
   &-full {
     width: 100%;
   }
+}
+
+.help-block {
+  color: rgb(255, 109, 109);
+  // adds spacing between messages if there are multiple
+  padding-right: 3px;
 }
