@@ -1,0 +1,25 @@
+<div class="row">
+  <div class="col-md-3">
+    <div class="mx-auto">
+      <%= img_tag(avatar_url(@user), class: "avatar-full") %>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        Verification
+      </div>
+      <div class="card-body">
+        <h4 class="card-title">Email Address</h4>
+        <p class="card-text">Phone Number</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-9">
+    <h2><%= @user.name %></h2>
+    <div class="btn btn-primary">button</div>
+    <div class="description row-space-3">
+      <%= if @user.description do %>
+        <%= @user.description %>    
+      <% end %>
+    </div>
+  </div>
+</div>

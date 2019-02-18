@@ -6,6 +6,8 @@ defmodule Elixirbnb.Coherence.User do
   schema "users" do
     field(:name, :string)
     field(:email, :string)
+    field(:phone_number, :string)
+    field(:description, :string)
     coherence_schema()
 
     timestamps()
@@ -19,6 +21,8 @@ defmodule Elixirbnb.Coherence.User do
     |> validate_required([:name, :email])
     |> validate_length(:name, min: 1, max: 100)
     |> validate_length(:email, min: 1, max: 200)
+    |> validate_length(:phone_number, min: 1, max: 20)
+    |> validate_length(:description, min: 1, max: 200)
     |> validate_format(:email, ~r/@/)
     |> unique_constraint(:email)
     |> validate_coherence(params)

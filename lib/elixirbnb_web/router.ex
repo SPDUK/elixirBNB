@@ -40,6 +40,10 @@ defmodule ElixirbnbWeb.Router do
 
     get "/", PageController, :index
 
+    scope "/user" do
+      get "/:id", UserController, :show
+    end
+
     scope "/pages" do
       get "/home", PageController, :home
     end

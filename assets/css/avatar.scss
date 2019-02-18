@@ -1,0 +1,15 @@
+.avatar {
+  &-small {
+    height: 28px;
+    padding-right: 2px;
+  }
+  &-medium {
+    width: 48px;
+  }
+  &-large {
+    width: 68px;
+  }
+  &-full {
+    width: 100%;
+  }
+}

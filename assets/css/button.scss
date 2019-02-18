@@ -1,0 +1,31 @@
+@import './variables.scss';
+
+// using !important to avoid bootstrap defaults
+.btn-primary.btn {
+  border: 1px solid $primary;
+  border-radius: 2px;
+  font-weight: bold;
+  background-color: $primary;
+  color: #fff;
+  padding: 10px 25px;
+}
+.btn-primary.btn:hover,
+.btn-primary.btn:focus {
+  border-color: $primary-alt;
+  background-color: $primary-alt;
+  border-bottom-color: #fa0008;
+  outline: none !important;
+}
+
+.btn-primary.btn:active {
+  border-color: #e00007 !important;
+  background-color: #e00007 !important;
+  outline: none !important;
+}
+
+.btn-default.btn {
+  width: 100%;
+  border-radius: 2px;
+  padding: 10px 0;
+  margin-top: 10px;
+}

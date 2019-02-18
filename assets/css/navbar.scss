@@ -1,0 +1,11 @@
+// using !important to override bootstrap defaults
+@import './variables.scss';
+
+.navbar {
+  margin-bottom: 90px;
+  background-color: #fefefe !important;
+  &-brand {
+    color: $primary !important;
+    font-size: 1.75em;
+  }
+}

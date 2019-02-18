@@ -1,33 +1,21 @@
 /* This file is for your main application css. */
 @import './alert.scss';
-$bg: rgb(243, 243, 243);
-
+@import './avatar.scss';
+@import './navbar.scss';
+@import './button.scss';
+@import './variables.scss';
+@import './user_page.scss';
 body {
-  background-color: $bg;
+  color: #565a5c;
+  background-color: #f8f8f8;
 }
 
-.navbar {
-  margin-bottom: 90px;
-}
-
-.avatar {
-  &-small {
-    height: 28px;
-    padding-right: 2px;
-  }
-  &-medium {
-    width: 48px;
-  }
-  &-large {
-    width: 68px;
-  }
-  &-full {
-    width: 100%;
-  }
+.container {
+  width: 80%;
 }
 
 .help-block {
-  color: rgb(255, 109, 109);
+  color: $primary;
   // adds spacing between messages if there are multiple
   padding-right: 3px;
 }
