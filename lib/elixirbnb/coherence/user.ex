@@ -2,7 +2,7 @@ defmodule Elixirbnb.Coherence.User do
   @moduledoc false
   use Ecto.Schema
   use Coherence.Schema
-  
+
   schema "users" do
     field(:name, :string)
     field(:email, :string)
@@ -17,6 +17,8 @@ defmodule Elixirbnb.Coherence.User do
     model
     |> cast(params, ~w(name email)a ++ coherence_fields())
     |> validate_required([:name, :email])
+    |> validate_length(:name, min: 1, max: 100)
+    |> validate_length(:email, min: 1, max: 300)
     |> validate_format(:email, ~r/@/)
     |> unique_constraint(:email)
     |> validate_coherence(params)

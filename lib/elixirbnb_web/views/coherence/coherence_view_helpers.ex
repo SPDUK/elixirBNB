@@ -31,6 +31,15 @@ defmodule ElixirbnbWeb.Coherence.ViewHelpers do
   @signin_link_text "Sign In"
   @signout_link_text "Sign Out"
 
+  def avatar_url(conn) do
+    gravatar_id =
+      Coherence.current_user(conn).email
+      |> :erlang.md5()
+      |> Base.encode16(case: :lower)
+
+    "https://www.gravatar.com/avatar/#{gravatar_id}.jpg?d=identical&s=150"
+  end
+
   @doc """
   Get the default text for the Forgot your password link.
   """
