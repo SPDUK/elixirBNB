@@ -14,7 +14,7 @@
       <div class="card-body">
         <div class="container">
           <%= render "form.html", changeset: @changeset,
-                                  label: dgettext("coherence", "Update"), required: [],
+                                  label: dgettext("coherence", "Save"), required: [],
                                   action: Routes.registration_path(@conn, :update) %>
         </div>
       </div>

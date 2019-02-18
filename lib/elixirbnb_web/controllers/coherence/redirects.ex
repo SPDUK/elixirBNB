@@ -43,10 +43,17 @@ defmodule Coherence.Redirects do
   """
   use Redirects
   import ElixirbnbWeb.Router.Helpers
+  import ElixirbnbWeb.Coherence.ViewHelpers
+
+  # after updating send the user to their public profile
+  def registration_update(conn, _, _) do
+    id = current_user(conn).id
+    redirect(conn, to: "/users/#{id}")
+  end
 
   # doesn't work?
   def registration_create(conn, _), do: redirect(conn, to: session_path(conn, :new))
 
-  # Uncomment the following line to return the user to the login form after logging out
+  #  return the user to the login form after logging out
   def session_delete(conn, _), do: redirect(conn, to: session_path(conn, :new))
 end
