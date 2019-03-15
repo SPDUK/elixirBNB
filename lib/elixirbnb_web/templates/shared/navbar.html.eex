@@ -26,6 +26,12 @@
         <li class="nav-item"><%= link("Sign Up", to: Routes.registration_path(@conn, :new), class: "btn") %></li>
         <li class="nav-item"><%= link("Log In", to: Routes.session_path(@conn, :new), class: "btn") %></li>
       <% end %>
+      <li class="nav-item">
+        <a class="nav-link" href="#"><i class="fa fa-envelope-o"></i> Messages</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#"><i class="fa fa-home fa-lg"></i> Become a Host</a>
+      </li>
     </ul>
   </div>
 </nav>

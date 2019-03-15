@@ -34,3 +34,31 @@
   font-weight: bold;
   text-decoration: none;
 }
+
+label {
+  color: #565a5c;
+  font-size: 1.1em;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+input[type='checkbox'] {
+  height: 1.25em;
+  width: 1.25em;
+  margin-bottom: -0.25em;
+  margin-right: 5px;
+  vertical-align: center;
+  border: 1px solid #c5c5c5;
+  border-radius: 2px;
+  @include no-appearance;
+
+  &:checked:before {
+    content: '\2713';
+    position: absolute;
+    font-size: 1.2em;
+    top: -1px;
+    vertical-align: center;
+    width: 1.25em;
+    color: $primary;
+  }
+}

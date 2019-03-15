@@ -1,71 +1,163 @@
 <%= form_for @changeset, @action, fn f -> %>
   <%= if @changeset.action do %>
-    <div class="alert alert-danger">
-      <p>Oops, something went wrong! Please check the errors below.</p>
-    </div>
-  <% end %>
-
-  <%= label f, :home_type %>
-  <%= text_input f, :home_type %>
-  <%= error_tag f, :home_type %>
-
-  <%= label f, :room_type %>
-  <%= text_input f, :room_type %>
-  <%= error_tag f, :room_type %>
-
-  <%= label f, :accommodate %>
-  <%= number_input f, :accommodate %>
-  <%= error_tag f, :accommodate %>
-
-  <%= label f, :bed_room %>
-  <%= number_input f, :bed_room %>
-  <%= error_tag f, :bed_room %>
-
-  <%= label f, :bath_room %>
-  <%= number_input f, :bath_room %>
-  <%= error_tag f, :bath_room %>
-
-  <%= label f, :listing_name %>
-  <%= text_input f, :listing_name %>
-  <%= error_tag f, :listing_name %>
-
-  <%= label f, :summary %>
-  <%= textarea f, :summary %>
-  <%= error_tag f, :summary %>
-
-  <%= label f, :address %>
-  <%= text_input f, :address %>
-  <%= error_tag f, :address %>
-
-  <%= label f, :is_tv %>
-  <%= checkbox f, :is_tv %>
-  <%= error_tag f, :is_tv %>
-
-  <%= label f, :is_kitchen %>
-  <%= checkbox f, :is_kitchen %>
-  <%= error_tag f, :is_kitchen %>
-
-  <%= label f, :is_air %>
-  <%= checkbox f, :is_air %>
-  <%= error_tag f, :is_air %>
-
-  <%= label f, :is_heating %>
-  <%= checkbox f, :is_heating %>
-  <%= error_tag f, :is_heating %>
-
-  <%= label f, :is_internet %>
-  <%= checkbox f, :is_internet %>
-  <%= error_tag f, :is_internet %>
-
-  <%= label f, :price %>
-  <%= number_input f, :price %>
-  <%= error_tag f, :price %>
-
-  <%= label f, :active %>
-  <%= checkbox f, :active %>
-  <%= error_tag f, :active %>
-
-  <div>
-    <%= submit "Save" %>
+  <div class="alert alert-danger animated bounceInDown">
+    <p>Oops, something went wrong! Please check the errors below.</p>
   </div>
-<% end %>
+  <% end %>
+  <div class="card card-default">
+    <div class="card-header">Give us some info about what you are renting out</div>
+    <div class="card-body">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 select">
+            <div class="form-group">
+              <%= label f, :home_type %>
+              <%= select f, :home_type, ["Apartment", "House", "Bed & Breakfast"],
+              prompt: "Select..", class: "form-control" %>
+              <%= error_tag f, :home_type %>
+            </div>
+          </div>
+          <div class="col-md-4 select">
+            <div class="form-group">
+              <%= label f, :room_type %>
+              <%= select f, :room_type, ["Entire", "Private", "Shared"],
+              prompt: "Select..", class: "form-control" %>
+              <%= error_tag f, :room_type %>
+            </div>
+          </div>
+          <div class="col-md-4 select">
+            <div class="form-group">
+              <%= label f, :accommodate %>   
+              <%= select f, :accommodate, 1..6, 
+              prompt: "Select..", class: "form-control" %>
+              <%= error_tag f, :accommodate %>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-4 select">
+            <div class="form-group">
+              <label>Bedrooms</label>
+              <%= select f, :bed_room, [{1, 1}, {2, 2}, {3, 3}, {"4+", 4}],
+              prompt: "Select..", class: "form-control" %>
+              <%= error_tag f, :bed_room %>
+            </div>
+          </div>
+          <div class="col-sm-4 select">
+            <div class="form-group">
+              <label>Bathrooms</label>
+              <%= select f, :bath_room, [{1, 1}, {2, 2}, {3, 3}, {"4+", 4}],
+              prompt: "Select..", class: "form-control" %>
+              <%= error_tag f, :bath_room %>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col-12">
+            <%= label f, :listing_name %>
+            <%= text_input f, :listing_name,
+            placeholder: "Be clear and descriptive", class: "form-control" %>
+            <%= error_tag f, :listing_name %>
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col-12">
+          <%= label f, :summary %>
+          <%= textarea f, :summary,
+          placeholder: "Tell us about your house", class: "form-control", rows: 5 %>
+          <%= error_tag f, :summary %>
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col-12">
+            <%= label f, :address %>
+            <%= text_input f, :address, 
+            placeholder: "What is your address?", class: "form-control" %>
+            <%= error_tag f, :address %>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label>
+                TV
+                <%= checkbox f, :is_tv %>
+                <%= error_tag f, :is_tv %>
+              </label>
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label>
+                Kitchen
+                <%= checkbox f, :is_kitchen %>
+                <%= error_tag f, :is_kitchen %>
+              </label>
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label>
+                Internet
+                <%= checkbox f, :is_internet %>
+                <%= error_tag f, :is_internet %>
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-5 col-md-4">
+            <div class="form-group">
+              <label>
+                Air Conditioning
+                <%= checkbox f, :is_air %>
+                <%= error_tag f, :is_air %>
+              </label>
+            </div>
+          </div>
+          <div class="col-sm-5 col-md-4">
+            <div class="form-group">
+              <label>
+                Heating
+                <%= checkbox f, :is_heating %>
+                <%= error_tag f, :is_heating %>
+              </label>
+            </div>
+          </div>
+          <div class="col-md-4">
+          <div class="form-group">
+            <%= label f, :active %>
+            <%= checkbox f, :active %>
+            <%= error_tag f, :active %>
+          </div>
+        </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label>Nightly Price
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">$</span>
+                  </div>
+                  <%= number_input f, :price, class: "form-control" %>
+                  <%= error_tag f, :price %>
+                </div>
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="actions">
+          <%= submit "Save", class: "btn btn-primary" %>
+        </div>
+      </div>
+
+
+
+
+
+
+
+
+
+      <% end %>
