@@ -1,0 +1,54 @@
+<h1>Listing Rooms</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Home type</th>
+      <th>Room type</th>
+      <th>Accommodate</th>
+      <th>Bed room</th>
+      <th>Bath room</th>
+      <th>Listing name</th>
+      <th>Summary</th>
+      <th>Address</th>
+      <th>Is tv</th>
+      <th>Is kitchen</th>
+      <th>Is air</th>
+      <th>Is heating</th>
+      <th>Is internet</th>
+      <th>Price</th>
+      <th>Active</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for room <- @rooms do %>
+    <tr>
+      <td><%= room.home_type %></td>
+      <td><%= room.room_type %></td>
+      <td><%= room.accommodate %></td>
+      <td><%= room.bed_room %></td>
+      <td><%= room.bath_room %></td>
+      <td><%= room.listing_name %></td>
+      <td><%= room.summary %></td>
+      <td><%= room.address %></td>
+      <td><%= room.is_tv %></td>
+      <td><%= room.is_kitchen %></td>
+      <td><%= room.is_air %></td>
+      <td><%= room.is_heating %></td>
+      <td><%= room.is_internet %></td>
+      <td><%= room.price %></td>
+      <td><%= room.active %></td>
+
+      <td>
+        <%= link "Show", to: Routes.room_path(@conn, :show, room) %>
+        <%= link "Edit", to: Routes.room_path(@conn, :edit, room) %>
+        <%= link "Delete", to: Routes.room_path(@conn, :delete, room), method: :delete, data: [confirm: "Are you sure?"] %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Room", to: Routes.room_path(@conn, :new) %></span>

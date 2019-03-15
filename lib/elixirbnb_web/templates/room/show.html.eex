@@ -1,0 +1,83 @@
+<h1>Show Room</h1>
+
+<ul>
+
+  <li>
+    <strong>Home type:</strong>
+    <%= @room.home_type %>
+  </li>
+
+  <li>
+    <strong>Room type:</strong>
+    <%= @room.room_type %>
+  </li>
+
+  <li>
+    <strong>Accommodate:</strong>
+    <%= @room.accommodate %>
+  </li>
+
+  <li>
+    <strong>Bed room:</strong>
+    <%= @room.bed_room %>
+  </li>
+
+  <li>
+    <strong>Bath room:</strong>
+    <%= @room.bath_room %>
+  </li>
+
+  <li>
+    <strong>Listing name:</strong>
+    <%= @room.listing_name %>
+  </li>
+
+  <li>
+    <strong>Summary:</strong>
+    <%= @room.summary %>
+  </li>
+
+  <li>
+    <strong>Address:</strong>
+    <%= @room.address %>
+  </li>
+
+  <li>
+    <strong>Is tv:</strong>
+    <%= @room.is_tv %>
+  </li>
+
+  <li>
+    <strong>Is kitchen:</strong>
+    <%= @room.is_kitchen %>
+  </li>
+
+  <li>
+    <strong>Is air:</strong>
+    <%= @room.is_air %>
+  </li>
+
+  <li>
+    <strong>Is heating:</strong>
+    <%= @room.is_heating %>
+  </li>
+
+  <li>
+    <strong>Is internet:</strong>
+    <%= @room.is_internet %>
+  </li>
+
+  <li>
+    <strong>Price:</strong>
+    <%= @room.price %>
+  </li>
+
+  <li>
+    <strong>Active:</strong>
+    <%= @room.active %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.room_path(@conn, :edit, @room) %></span>
+<span><%= link "Back", to: Routes.room_path(@conn, :index) %></span>

@@ -2,6 +2,7 @@ defmodule Elixirbnb.Coherence.User do
   @moduledoc false
   use Ecto.Schema
   use Coherence.Schema
+  alias Elixirbnb.Rentals.Room
 
   schema "users" do
     field(:name, :string)
@@ -9,6 +10,8 @@ defmodule Elixirbnb.Coherence.User do
     field(:phone_number, :string)
     field(:description, :string)
     coherence_schema()
+
+    has_many(:rooms, Room)
 
     timestamps()
   end

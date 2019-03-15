@@ -53,6 +53,7 @@ defmodule ElixirbnbWeb.Router do
 
   scope "/", ElixirbnbWeb do
     pipe_through :protected
+    resources "/rooms", RoomController
 
     # add protected resources below (must be logged in to view)
     # resources "/privates", ElixirbnbWeb.PrivateController
